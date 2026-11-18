@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uz" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guruh A'zolari — Premium Dashboard</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Outfit', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="relative min-h-screen bg-[#0f1026] px-4 py-12 text-slate-100 selection:bg-pink-500 selection:text-white">
+
+  <!-- Orqa fondagi yumshoq rangli yorug'lik dog'lari -->
+  <div class="pointer-events-none fixed -top-32 left-1/4 h-[400px] w-[400px] rounded-full bg-purple-600/20 blur-[130px]"></div>
+  <div class="pointer-events-none fixed bottom-0 right-10 h-[400px] w-[400px] rounded-full bg-pink-600/15 blur-[130px]"></div>
+
+  <!-- Asosiy Konteyner -->
+  <div class="mx-auto max-w-6xl">
+
+    <!-- Sarlavha qismi -->
+    <header class="mx-auto mb-12 text-center">
+      <div class="inline-flex items-center gap-2.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-1.5 text-xs font-bold text-purple-300 shadow-lg shadow-purple-500/10 backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-pink-400 animate-pulse"></span>
+        JAMI A'ZOLAR: <b id="soni" class="text-white text-sm">0</b> TA
+      </div>
+
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+        Guruh <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">a'zolari</span>
+      </h1>
+      <p class="mt-2 text-sm text-slate-400 sm:text-base">
+        Jamoangizning barcha a'zolarini chiroyli va tartibli kartalarda boshqaring.
+      </p>
+    </header>
+
+    <!-- Ikki ustunli asosiy qism -->
+    <main class="grid gap-8 lg:grid-cols-12 items-start">
+
+      <!-- Forma qismi (Chapda) -->
+      <section class="lg:col-span-5">
+        <div class="sticky top-8 rounded-3xl border border-purple-500/20 bg-slate-900/80 p-6 shadow-2xl shadow-purple-950/40 backdrop-blur-2xl sm:p-8">
+          
+          <div class="mb-6 flex items-center justify-between border-b border-purple-500/10 pb-4">
+            <h2 class="text-base font-bold text-white">Yangi a'zo qo'shish</h2>
+            <span class="rounded-lg bg-purple-500/20 px-2.5 py-1 text-xs font-bold text-purple-300">Ma'lumot</span>
+          </div>
+
+          <form id="forma" autocomplete="off" class="flex flex-col gap-4">
+
+            <label class="flex flex-col gap-1.5 text-xs font-bold text-slate-300 uppercase tracking-wider">
+              Ism va Familiya
+              <input id="inIsm" type="text" autocomplete="off" placeholder="Masalan: Malika" required
+                class="rounded-xl border border-purple-500/20 bg-slate-950 px-4 py-3.5 text-sm text-white placeholder-slate-600 transition focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20">
+            </label>
+
+            <label class="flex flex-col gap-1.5 text-xs font-bold text-slate-300 uppercase tracking-wider">
+              Guruh
+              <input id="inGuruh" type="text" autocomplete="off" placeholder="Masalan: Design-1" required
+                class="rounded-xl border border-purple-500/20 bg-slate-950 px-4 py-3.5 text-sm text-white placeholder-slate-600 transition focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20">
+            </label>
+
+            <div class="grid grid-cols-2 gap-3">
+              <label class="flex flex-col gap-1.5 text-xs font-bold text-slate-300 uppercase tracking-wider">
+                Yosh
+                <input id="inYosh" type="number" autocomplete="off" placeholder="19" required
+                  class="rounded-xl border border-purple-500/20 bg-slate-950 px-4 py-3.5 text-sm text-white placeholder-slate-600 transition focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20">
+              </label>
+
+              <label class="flex flex-col gap-1.5 text-xs font-bold text-slate-300 uppercase tracking-wider">
+                Telefon raqam
+                <input id="inTel" type="tel" autocomplete="off" placeholder="+998..." required
+                  class="rounded-xl border border-purple-500/20 bg-slate-950 px-4 py-3.5 text-sm text-white placeholder-slate-600 transition focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20">
+              </label>
+            </div>
+
+            <label class="flex flex-col gap-1.5 text-xs font-bold text-slate-300 uppercase tracking-wider">
+              Email manzil
+              <input id="inEmail" type="email" autocomplete="off" placeholder="malika@gmail.com" required
+                class="rounded-xl border border-purple-500/20 bg-slate-950 px-4 py-3.5 text-sm text-white placeholder-slate-600 transition focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20">
+            </label>
+
+            <label class="flex flex-col gap-1.5 text-xs font-bold text-slate-300 uppercase tracking-wider">
+              Profil rasmi
+              <input id="inRasm" type="file" accept="image/*"
+                class="cursor-pointer rounded-xl border border-dashed border-purple-500/30 bg-slate-950 px-4 py-3 text-xs text-slate-400 transition hover:border-pink-500 file:mr-3 file:cursor-pointer file:rounded-lg file:border-0 file:bg-purple-600 file:px-3 file:py-1.5 file:text-xs file:font-bold file:text-white hover:file:bg-purple-500">
+            </label>
+
+            <button type="submit"
+              class="mt-2 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 px-4 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-purple-600/30 transition hover:scale-[1.02] active:scale-[0.98]">
+              ✨ Guruhga qo'shish
+            </button>
+          </form>
+
+        </div>
+      </section>
+
+      <!-- Kartalar ro'yxati (O'ngda) -->
+      <section class="lg:col-span-7">
+        <div id="kartalar" class="grid gap-5 sm:grid-cols-2"></div>
+
+        <!-- Bo'sh holat -->
+        <div id="bosh" class="hidden rounded-3xl border border-dashed border-purple-500/20 bg-slate-900/40 p-12 text-center backdrop-blur-md">
+          <p class="text-sm text-slate-400">Guruh hozircha bo'sh. Chap tarafdan a'zo qo'shing!</p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- ============ KARTA SHABLONI ============ -->
+  <template id="kartaShablon">
+    <div class="group flex flex-col overflow-hidden rounded-3xl border border-purple-500/20 bg-slate-900/80 shadow-xl backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-pink-500/40 hover:shadow-pink-500/10">
+
+      <!-- Rasm yoki bosh harf qismi -->
+      <div class="relative h-56 overflow-hidden bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950">
+        <img class="rasm h-full w-full object-cover transition duration-500 group-hover:scale-105" alt="rasm">
+        <div class="harf flex h-full w-full items-center justify-center bg-gradient-to-tr from-purple-600/30 to-pink-600/30 text-7xl font-extrabold text-pink-300"></div>
+
+        <!-- Guruh Badge -->
+        <span class="guruh absolute left-3 top-3 rounded-lg border border-purple-500/30 bg-slate-950/80 px-3 py-1 text-xs font-bold text-purple-300 backdrop-blur-md"></span>
+
+        <!-- O'chirish tugmasi -->
+        <button class="ochirTugma absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg border border-purple-500/30 bg-slate-950/80 text-xs font-bold text-slate-300 backdrop-blur-md transition hover:border-rose-500 hover:bg-rose-500 hover:text-white">
+          ✕
+        </button>
+
+        <!-- Ism -->
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent px-4 pb-3 pt-12">
+          <h3 class="ism break-words text-xl font-bold text-white"></h3>
+        </div>
+      </div>
+
+      <!-- Ma'lumotlar -->
+      <div class="flex flex-1 flex-col gap-2.5 p-4 text-xs">
+        <div class="grid grid-cols-2 gap-2.5">
+          <div class="rounded-2xl border border-purple-500/10 bg-purple-500/[0.03] px-3.5 py-2.5">
+            <p class="text-[10px] font-extrabold uppercase tracking-wider text-purple-400">Yosh</p>
+            <p class="yosh mt-0.5 font-bold text-slate-200"></p>
+          </div>
+          <div class="rounded-2xl border border-purple-500/10 bg-purple-500/[0.03] px-3.5 py-2.5">
+            <p class="text-[10px] font-extrabold uppercase tracking-wider text-purple-400">Telefon</p>
+            <p class="tel mt-0.5 break-all font-bold text-slate-200"></p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-purple-500/10 bg-purple-500/[0.03] px-3.5 py-2.5">
+          <p class="text-[10px] font-extrabold uppercase tracking-wider text-purple-400">Email</p>
+          <p class="email mt-0.5 break-all font-bold text-pink-300"></p>
+        </div>
+      </div>
+
+    </div>
+  </template>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
